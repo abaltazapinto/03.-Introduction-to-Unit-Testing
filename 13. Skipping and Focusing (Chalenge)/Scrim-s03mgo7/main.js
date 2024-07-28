@@ -10,7 +10,7 @@
 /* 
 * Challenge Prompt Here
 * ------------------------
-*
+* "I understand the value testing brings and will help to educate those about it"
 */
 
 // Test Suite 

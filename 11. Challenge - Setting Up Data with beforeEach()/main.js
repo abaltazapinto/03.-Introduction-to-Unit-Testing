@@ -40,17 +40,25 @@ describe(`${User.name} Class`, () => {
          // just use the class and think on her
          model = new User({ firstName: 'André', lastName: 'Pinto' });
         });
-        it('middle initial when the middle name is defined with first and last', () => {
+        it('middle initial when the middle name is defined with first and the first letter of the middle name and last', () => {
             //arrange
-            model.middleName = 'B';
+            model.middleName = 'Baltazar';
 
             //act
             const result = model.fullName;
             //assert
-            expect(result).toBe()
+            expect(result).toBe(`${model.firstName} ${model.middleName[0]}. ${model.lastName}`)});
 
+        it('when the middle name is not defined with first and last', () => {
+            //arrange
+            model.middleName = '';
 
+            //act
+            const result = model.fullName;
+            //assert
+            expect(result).toBe(`${model.firstName} ${model.lastName}`);
+        
+        });
     })
 });
 
-});

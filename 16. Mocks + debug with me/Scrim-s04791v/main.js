@@ -33,5 +33,20 @@ describe(`${User.name} Class`, () => {
             //assert
             expect(mockUserService.lastId).toBe(1)
         });
+
+        it('getMyFullUserData gets the provided user data', async () => {
+            //arrange
+            const expectedUserData = new User({
+                    firstName: 'Andre',
+                    middleName: 'Baltazar',
+                    lastName: 'Coding God',
+                    id: 2 
+                })
+            //act
+            const result = await model.getUserData();
+
+            //assert
+            expect(result.id).toBe(2)     
+    });
     });
 });

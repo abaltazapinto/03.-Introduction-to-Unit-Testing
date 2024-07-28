@@ -27,14 +27,19 @@ describe(`${User.name} Class`, () => {
         it('gets user data by id', async () => {
             // arrange
             mockUserService.lastId = null;
-            mockUserService.user = new User(
-                {firstName: 'Dollan', middleName: 'Coding God', lastName: 'Noneya', id: 2 }
-                )
+            mockUserService.user = new User({
+                    firstName: 'Dollan',
+                    middleName: 'Coding God',
+                    lastName: 'Noneya',
+                    id: 2 
+                })
+
             // act
             const result = await model.getMyFullUserData();
             
             // assert
             expect(mockUserService.lastId).toBe(1);
+            expect(result.firstName).toBe('Dollan');
         });
     });
 });
